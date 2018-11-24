@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-3">
+      <div class="text-center">
+        <h2>
+          <%= @todo.title %>
+        </h2>
+
+        <br>
+        <hr>
+
+        <h3 class="lead">
+          Nota: <%= @todo.description %>
+        </h3>
+
+        <br>
+        <hr>
+
+        <%= link_to "Completado", user_todo_path(current_user, @todo), method: :delete, class: "btn btn-success" %>
+        <%= link_to "Regresar", user_todos_path(current_user), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
