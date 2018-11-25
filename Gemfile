@@ -28,6 +28,10 @@ gem 'devise'
 gem 'bootstrap', '~> 4.1', '>= 4.1.3'
 #Dependenci from Bootstrap
 gem 'jquery-rails'
+# React Gem
+gem 'react-rails'
+# WebPacker Gem to use completly functional React Gem
+gem 'webpacker'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
