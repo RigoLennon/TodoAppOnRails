@@ -1,28 +1,46 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">ToDo on Rails</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<!DOCTYPE html>
+<html lang="en">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-md-auto">
+<head>
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
-      <li class="nav-item active">
-        <%= link_to "Inicio", root_path, class: "nav-link" %>
-      </li>
+  <!-- Animated icons-->
+  <script src="https://cdn.rawgit.com/icons8/titanic/master/dist/js/titanic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.5.9/bodymovin.min.js"></script>
+</head>
 
-      <% if user_signed_in? %>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+  <div class="container">
+    <%= link_to "ToDo on Rails", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <%=link_to "Nueva Tarea", new_user_todo_path(current_user), class: "nav-link" %>
+          <%= link_to "Inicio", root_path, class: "nav-link" %>
         </li>
 
-        <li class="nav-item">
-          <%= link_to "Mis tareas", user_todos_path(current_user), class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "nav-link" %>
-        </li>
-      <% else %>
+        <%if user_signed_in? %>
+          <li class="nav-item">
+            <%=link_to "Nueva Tarea", new_user_todo_path(current_user), class: "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "Mis tareas", user_todos_path(current_user), class: "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        <%else %>
+        <%end %>
+
         <li class="nav-item">
           <%= link_to "Iniciar Sesión", new_user_session_path, class: "nav-link" %>
         </li>
@@ -30,8 +48,8 @@
         <li class="nav-item">
           <%= link_to "Registrarse", new_user_registration_path, class: "nav-link" %>
         </li>
-      <%end %>
 
-    </ul>
+      </ul>
+    </div>
   </div>
 </nav>

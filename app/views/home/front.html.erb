@@ -1,5 +1,86 @@
-<h1>Home#front</h1>
-<p>Find me in app/views/home/front.html.erb</p>
 
-<%= link_to "Iniciar sesion", new_user_session_path %>
-<%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %>
+<header class="masthead text-center text-white">
+  <div class="masthead-content">
+    <div class="container">
+      <h1 class="masthead-heading mb-0">Todas tus tareas en un solo lugar</h1>
+      <h2 class="masthead-subheading mb-0">Administra tu tiempo</h2>
+      <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">¡Empieza Ahora!</a>
+    </div>
+  </div>
+  <div class="bg-circle-1 bg-circle"></div>
+  <div class="bg-circle-2 bg-circle"></div>
+  <div class="bg-circle-3 bg-circle"></div>
+  <div class="bg-circle-4 bg-circle"></div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 order-lg-2">
+        <div class="p-5">
+          <div class='titanic titanic-checkbox'></div>
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-1">
+        <div class="p-5">
+          <h2 class="display-4">Lista de tareas pendientes</h2>
+          <p>Administra tus tareas de forma rápida e intuitiva, con una
+            interfaz sencilla y práctica para todas las tareas del dia a dia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="p-5">
+          <div class='titanic titanic-hourglass'></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="p-5">
+          <h2 class="display-4">Tú tiempo es valioso</h2>
+          <p>Sabemos que tu tiempo es oro, asi que te ayudamos a organizarlo,
+            de forma rápida puedes administrar tu semana.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 order-lg-2">
+        <div class="p-5">
+          <div class='titanic titanic-cloud'></div>
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-1">
+        <div class="p-5">
+          <h2 class="display-4">¡Todo esta en linea!</h2>
+          <p>No te preocupes a donde quiera que vayas tu lista de
+            quehaceres estará disponible solo conectate a internet y mira tus pendientes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+    var titanic = new Titanic({
+        hover: true,
+        click: true
+    });
+</script>
+
+<button onclick="titanic.on(getElementById('checkbox').value)">On</button>
+
+<footer class="py-5 bg-black">
+  <div class="container">
+    <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2018</p>
+  </div>
+</footer>
